@@ -1,0 +1,27 @@
+<a  href="#!/books" title="Go Back">Go Back</a>
+<div class="card" ng-init="vm.getBook()">
+  <div class="card-header">
+    Latest Books
+  </div>
+  <div class="card-body">
+    <div class="row">
+    <div class="col-md-4">
+      <img src="{{vm.book.image_url}}" alt="">
+    </div>
+    <div class="col-md-8">
+      <p>{{vm.book.description}}</p>
+      <ul class="list-group">
+        <li class="list-group-item">Genre: {{vm.book.genres}}</li>
+        <li class="list-group-item">Author: {{vm.book.author}}</li>
+        <li class="list-group-item">Publisher: {{vm.book.publisher}}</li>
+        <li class="list-group-item">Pages: {{vm.book.pages}}</li>
+      </ul>
+      <a href="{{vm.book.buy_url}}" title="">Buy on Amazon</a>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="float-right">
+  <a href="#!/books/edit/{{vm.book._id}}" title="Edit Book">Edit</a>
+  | <a href="#" title="Delete Book" ng-click="vm.removeBook(vm.book._id)">Delete</a>
+</div>
